@@ -12,13 +12,13 @@ import com.curso.entities.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-	String queryAll = "select new com.curso.dto.UserDto(t.id, t.name, t.email, t.password)"
+	String queryAll = "select new com.curso.dto.UserDto(t.idUser, t.name, t.email, t.password)"
 					+ "from User t"
 					+ "where 1=1";
 	
 	@Query(value = queryAll)
 	public List<UserDto> getAll();
 	
-	@Query(value = queryAll + " and t.id=?1")
+	@Query(value = queryAll + " and t.idUser=?1")
 	public List<UserDto> getUserById(int id);
 }
