@@ -1,8 +1,6 @@
 package com.curso.dto;
 
-import java.io.Serializable;
-
-public class UserDto implements Serializable {
+public class UserDto implements _DTOEntity {
 	
 	private int idUser;
 	private String name;
