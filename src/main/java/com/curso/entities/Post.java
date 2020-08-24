@@ -50,6 +50,14 @@ public class Post {
 	public void setTextPost(String textPost) {
 		this.textPost = textPost;
 	}
-	
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	
 }

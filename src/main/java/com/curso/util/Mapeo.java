@@ -9,14 +9,16 @@ import com.curso.dto._DTOEntity;
 @Component
 public class Mapeo {
 	
-	@Autowired
-	private ModelMapper modelMapper;
+//	@Autowired
+//	private ModelMapper modelMapper;
 	
 	public _DTOEntity convertToDto(Object obj, _DTOEntity dto) {
+		ModelMapper modelMapper = new ModelMapper();
 		return modelMapper.map(obj, dto.getClass());
 	}
 	
 	public Object convertToEntity(_DTOEntity dto, Object obj) {
+		ModelMapper modelMapper = new ModelMapper();
 		return modelMapper.map(dto, obj.getClass());
 	}
 

@@ -12,7 +12,7 @@ import com.curso.entities.Post;
 @Repository
 public interface PostRepository extends JpaRepository<Post, Integer> {
 	
-	String queryAll = "select new com.curso.dto.PostDto(t.idPost,t.textPost,t.idUser)"
+	String queryAll = "select new com.curso.dto.PostDto(t.idPost,t.textPost,t.user.idUser)"
 					+ " from Post t"
 					+ " where 1=1";
 	
@@ -22,7 +22,7 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
 	@Query(value = queryAll + " and t.idPost=?1")
 	public List<PostDto> get(int id);
 	
-	@Query(value = queryAll + " and t.idUser=?1")
+	@Query(value = queryAll + " and t.user.idUser=?1")
 	public List<PostDto> getByUser(int idUser);
 
 }

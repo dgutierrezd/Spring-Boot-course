@@ -13,8 +13,8 @@ import com.curso.entities.User;
 public interface UserRepository extends JpaRepository<User, Integer> {
 
 	String queryAll = "select new com.curso.dto.UserDto(t.idUser, t.name, t.email, t.password)"
-					+ "from User t"
-					+ "where 1=1";
+					+ " from User t"
+					+ " where 1=1";
 	
 	@Query(value = queryAll)
 	public List<UserDto> getAll();
